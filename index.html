@@ -4,10 +4,211 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Bhavishya Kumar | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
-    <div id="app"></div>
+    <!-- Navigation -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">BK</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/Bhavishya_Kumar_Resume.pdf" target="_blank" class="nav-resume-btn">Resume</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Bhavishya Kumar</h1>
+        <p class="hero-title">Full Stack Developer</p>
+        <p class="hero-description">
+          I build modern, responsive web applications with clean code and great user experiences.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+        <div class="hero-socials">
+          <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <div class="about-image-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
+          <div class="about-text">
+            <p>
+              Hi! I'm <strong>Bhavishya Kumar</strong>, a passionate developer who loves building 
+              things for the web. I enjoy turning complex problems into simple, beautiful, and 
+              intuitive solutions.
+            </p>
+            <p>
+              I'm always curious about new technologies and love learning. Whether it's front-end 
+              development, back-end architecture, or exploring new frameworks — I'm up for the challenge.
+            </p>
+            <a href="/Bhavishya_Kumar_Resume.pdf" target="_blank" class="btn btn-primary">
+              <i class="fas fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fab fa-html5"></i>
+            <h3>HTML5</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS3</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-js-square"></i>
+            <h3>JavaScript</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-react"></i>
+            <h3>React</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-node-js"></i>
+            <h3>Node.js</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-git-alt"></i>
+            <h3>Git</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-python"></i>
+            <h3>Python</h3>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <h3>Databases</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-info">
+              <h3>E-Commerce App</h3>
+              <p>A full-stack e-commerce platform with user authentication, product management, and payment integration.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="project-info">
+              <h3>Weather Dashboard</h3>
+              <p>A responsive weather application that shows real-time forecasts using a public weather API.</p>
+              <div class="project-tech">
+                <span>JavaScript</span>
+                <span>API</span>
+                <span>CSS3</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div class="project-info">
+              <h3>Task Manager</h3>
+              <p>A productivity app for managing tasks with drag-and-drop, categories, and progress tracking.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Firebase</span>
+                <span>Tailwind</span>
+              </div>
+              <div class="project-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-description">
+          I'm currently open to new opportunities. Whether you have a question, a project idea, 
+          or just want to say hi — feel free to reach out!
+        </p>
+        <a href="mailto:your.email@example.com" class="btn btn-primary btn-large">
+          <i class="fas fa-envelope"></i> Say Hello
+        </a>
+        <div class="contact-socials">
+          <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Designed & Built by <strong>Bhavishya Kumar</strong></p>
+      <p>&copy; 2026 All rights reserved.</p>
+    </footer>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
