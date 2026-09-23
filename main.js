@@ -4,7 +4,7 @@ import './style.css'
 const navbar = document.getElementById('navbar')
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
+  if (window.scrollY > 40) {
     navbar.classList.add('scrolled')
   } else {
     navbar.classList.remove('scrolled')
@@ -15,30 +15,44 @@ window.addEventListener('scroll', () => {
 const navToggle = document.querySelector('.nav-toggle')
 const navLinks = document.querySelector('.nav-links')
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active')
-  const icon = navToggle.querySelector('i')
-  icon.classList.toggle('fa-bars')
-  icon.classList.toggle('fa-times')
-})
-
-// Close mobile menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active')
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active')
     const icon = navToggle.querySelector('i')
-    icon.classList.add('fa-bars')
-    icon.classList.remove('fa-times')
+    if (icon) {
+      icon.classList.toggle('fa-bars')
+      icon.classList.toggle('fa-times')
+    }
   })
-})
 
-// ===== Smooth scroll for nav links =====
+  // Close mobile menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active')
+      const icon = navToggle.querySelector('i')
+      if (icon) {
+        icon.classList.add('fa-bars')
+        icon.classList.remove('fa-times')
+      }
+    })
+  })
+}
+
+// ===== Smooth scroll for internal links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
-    e.preventDefault()
-    const target = document.querySelector(anchor.getAttribute('href'))
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const targetId = anchor.getAttribute('href')
+    if (targetId && targetId !== '#') {
+      const target = document.querySelector(targetId)
+      if (target) {
+        e.preventDefault()
+        const navHeight = navbar ? navbar.offsetHeight : 70
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        })
+      }
     }
   })
 })
@@ -46,7 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===== Scroll animations (fade-in) =====
 const observerOptions = {
   threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
+  rootMargin: '0px 0px -40px 0px'
 }
 
 const observer = new IntersectionObserver((entries) => {
@@ -57,20 +71,10 @@ const observer = new IntersectionObserver((entries) => {
   })
 }, observerOptions)
 
-// Add fade-in class to sections and cards
+// Add fade-in to elements
 document.querySelectorAll(
-  '.about-content, .skill-card, .project-card, .contact-description, .section-title'
+  '.about-card-left, .about-card-right, .timeline-item, .project-card, .skill-category-card, .edu-card, .contact-box, .section-title, .section-subtitle'
 ).forEach(el => {
   el.classList.add('fade-in')
   observer.observe(el)
-})
-
-// Stagger skill card animations
-document.querySelectorAll('.skill-card').forEach((card, index) => {
-  card.style.transitionDelay = `${index * 0.08}s`
-})
-
-// Stagger project card animations
-document.querySelectorAll('.project-card').forEach((card, index) => {
-  card.style.transitionDelay = `${index * 0.15}s`
 })
